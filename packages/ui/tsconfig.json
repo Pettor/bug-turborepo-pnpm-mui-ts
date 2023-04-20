@@ -1,0 +1,22 @@
+{
+  "extends": "config-tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      ".": ["."],
+      "@mui/system": ["@mui/material/node_modules/@mui/system"],
+      "@emotion/styled": ["@emotion/styled"],
+    }
+  },
+  "include": [".", ".eslintrc.js", ".storybook/**/*", "../config-mui/mui-theme.d.ts"],
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".turbo",
+    "coverage",
+    "dist",
+    "compiled",
+    "build-next-static",
+    "build-storybook-static"
+  ]
+}
