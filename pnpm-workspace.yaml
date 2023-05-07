@@ -1,3 +1,4 @@
 packages:
   - "apps/*"
   - "packages/*"
+enable-pre-post-scripts: true

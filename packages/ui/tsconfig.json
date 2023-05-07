@@ -1,22 +1,44 @@
 {
-  "extends": "config-tsconfig/tsconfig.base.json",
   "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "allowJs": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
     "baseUrl": ".",
-    "paths": {
-      ".": ["."],
-      "@mui/system": ["@mui/material/node_modules/@mui/system"],
-      "@emotion/styled": ["@emotion/styled"],
-    }
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "target": "es2020",
+    "importHelpers": true
   },
-  "include": [".", ".eslintrc.js", ".storybook/**/*", "../config-mui/mui-theme.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
-    ".next",
-    ".turbo",
-    "coverage",
-    "dist",
-    "compiled",
-    "build-next-static",
-    "build-storybook-static"
+    ".storybook",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.ts",
+    "src/**/*.stories.@(js|jsx|ts|tsx)"
   ]
 }

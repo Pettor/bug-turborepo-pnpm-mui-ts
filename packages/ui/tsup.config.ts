@@ -1,15 +1,19 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsup'
+import pkg from './package.json'
 
+const external = [...Object.keys(pkg.peerDependencies || {})]
 const tsupConfig = defineConfig({
-  entry: ['src/index.ts'],
-  format: ['esm', 'cjs'],
   dts: true,
-  external: ['react', 'react-dom', '@mui/material', /^@emotion/],
+  entryPoints: ['./src/index.tsx'],
+  external,
+  format: ['cjs', 'esm'],
+  inject: ['./src/react-shim.js'],
+  // ! .cjs/.mjs doesn't work with Angular's webpack4 config by default!
+  legacyOutput: true,
+  sourcemap: true,
   splitting: false,
-  minify: true,
-  clean: true,
-  tsconfig: 'tsconfig.prod.json',
-});
+  clean: false,
+})
 
 // eslint-disable-next-line import/no-default-export
-export default tsupConfig;
+export default tsupConfig
