@@ -4,8 +4,7 @@
     "baseUrl": ".",
     "paths": {
       ".": ["."],
-      "@mui/system": ["@mui/material/node_modules/@mui/system"],
-      "@emotion/styled": ["@emotion/styled"],
+      "@mui/system": ["@mui/material/node_modules/@mui/system"]
     }
   },
   "include": [".", ".eslintrc.js", ".storybook/**/*", "../config-mui/mui-theme.d.ts"],
